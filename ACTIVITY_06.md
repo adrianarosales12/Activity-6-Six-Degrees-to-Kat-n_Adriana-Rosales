@@ -1,6 +1,6 @@
 # Activity 6: Six Degrees to Katún — A Breadth-First Search Networking Challenge
 ## Sessions 13
-## Due date (mm/dd/yyyy): 09/21/2026
+## Due date (mm/dd/yyyy): 09/27/2026
 ## ADRIANA ROSALES GONZÁLEZ
 ## Delivery Format: [] Video URL | [X] Markdown file | [] Jupyter Notebook file
 
@@ -118,4 +118,41 @@ streamlit run app.py
 
 # References:
 - [Streamlit documentation](https://docs.streamlit.io/)
-- [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
+- [Markdown Guide](https://www.markdownguide.org/basic-syntax/)Ç
+
+
+
+---
+
+
+# Activity 6 — Reflection Questions: Six Degrees to Katún
+
+**1. What is the **initial state** and the **goal state** in this activity?**
+- The initial state is You, since the search begins from me. The goal state is Elena Ruiz, the CFO, who is the target of the introduction chain.
+
+**2. List, in order, every person BFS **processed** (took from the front of the line) before reaching Elena Ruiz. How many people did it process in total?**
+
+- In order, BFS processed:
+You → Marco Aguilar → Sofia Chan → Diego Torres → Valentina Cruz → Roberto Kim → Camila Duarte → Javier Mendez → Ana Beltran → Elena Ruiz  
+In total, it processed 10 people before stopping at Elena Ruiz.
+
+**3. Name the one contact who had **no new introductions** to offer when BFS reached them. Based on the network, explain in one sentence why not.**
+
+- The contact was Roberto Kim. He had no new introductions because all of his connections had already been reached earlier in the search, so he added nothing new to the queue.
+
+**4. What is the exact **shortest chain of introductions** from You to Elena Ruiz, and how many introductions (hops) does it take?**
+
+- The exact shortest chain was: You → Marco Aguilar → Valentina Cruz → Camila Duarte → Javier Mendez → Ana Beltran → Elena Ruiz. This required 6 hops (introductions).
+
+**5. According to the "What would last session's DFS have done here?" comparison, how many introductions would DFS have needed on this exact same network? Is that more, fewer, or the same as BFS's result?**
+
+- According to the app, DFS would have needed more introductions than BFS on this same network. BFS found the path in 6 hops, while DFS would have gone deeper into one branch before backtracking, increasing the number of steps.
+
+**6. In your own words, explain why BFS is **guaranteed** to find the shortest chain of introductions, while DFS is not. Use the words **"line" (or "queue")** and **"stack"** somewhere in your answer.**
+
+- BFS uses a line (queue), which means it always processes the closest neighbors first. That ensures the first time it reaches the goal, it is by the shortest path. DFS, on the other hand, uses a stack, diving deep into one branch regardless of distance, which can lead to finding a longer path before eventually backtracking.
+
+**7. Name one **real business scenario** (other than this one) where finding the *fewest-hops* connection matters more than just finding *any* connection at all — for example, referral chains, supply-chain routing, or an approval/escalation chain. Briefly explain why the fewest-hops answer specifically matters there.**
+
+- A good example is an approval chain in a company. In this case, finding the fewest hops matters because each additional step means more time and bureaucracy. The shortest path ensures that authorization is obtained quickly and efficiently, avoiding unnecessary delays.
+
